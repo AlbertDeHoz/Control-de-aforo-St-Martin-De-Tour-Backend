@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   EPS.init({
-    id: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement:true,
+    },
     name: DataTypes.STRING
   }, {
     sequelize,
