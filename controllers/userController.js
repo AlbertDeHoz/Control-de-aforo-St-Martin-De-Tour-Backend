@@ -35,3 +35,14 @@ exports.signin = async (req, res, next) => {
     next();
 }
 
+exports.enable = async (req, res) => {
+    const {id} = await User.findOne({where : {id: req.body.id}});
+    const user = await User.update({enable:true},{where: {id:id}});
+    res.status(200).json(user);
+};
+
+exports.disable = async (req, res) => {
+    const {id} = await User.findOne({where : {id: req.body.id}});
+    const user = await User.update({enable:false},{where: {id:id}});
+    res.status(200).json(user);
+}
