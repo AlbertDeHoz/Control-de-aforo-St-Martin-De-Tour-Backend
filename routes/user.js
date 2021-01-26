@@ -17,4 +17,6 @@ router.post('/signin', userController.signin);
 router.put('/enable', userController.enable);
 router.put('/disable', userController.disable);
 
+router.get('/:id',userController.justOne);
+
 module.exports = router;

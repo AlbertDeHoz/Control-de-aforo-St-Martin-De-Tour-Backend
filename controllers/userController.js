@@ -2,11 +2,21 @@ const {User} = require('../models');
 const {validationResult} = require('express-validator');
 const token = require('../services/token')
 
+const usernames = [
+    'Alan',
+    'Maria',
+    'Germán'
+]
 
 exports.list = async (req,res) => {
     const user = await User.findAll();
     return res.json(user)
 };
+
+exports.justOne = (req,res) => {
+    res.json(usernames[req.params.id]);
+    //res.json(usernames['nombre2'])
+}
 
 exports.register = async (req,res) => {
     const errors = validationResult(req);
