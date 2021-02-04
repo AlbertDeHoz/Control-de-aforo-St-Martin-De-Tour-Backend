@@ -1,4 +1,4 @@
-const {User} = require('../models');
+const {User,EPS} = require('../models');
 const {validationResult} = require('express-validator');
 const token = require('../services/token')
 
@@ -9,7 +9,16 @@ const usernames = [
 ]
 
 exports.list = async (req,res) => {
-    const user = await User.findAll();
+    const user = await User.findAll(
+        //{
+        //    include:{
+        //        model: EPS,
+        //        as:'epsName',
+        //        required: true,
+        //        attributes:['codigo','epsName']
+        //    }
+        //}
+    );
     return res.json(user)
 };
 
@@ -34,7 +43,7 @@ exports.register = async (req,res) => {
 }
 
 exports.signin = async (req, res, next) => {
-    const user =  await User.findOne({ where : { id: req.body.id}});  
+    const user =  await User.findOne({ where : { idNumber: req.body.id}});  
     if (user){
         const tokenUser = token.encode(user);
         res.status(200).json({tokenUser});

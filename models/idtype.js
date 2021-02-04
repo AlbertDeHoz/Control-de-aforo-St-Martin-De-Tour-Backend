@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class EPS extends Model {
+  class IdType extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,19 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  EPS.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement:true,
-    },
-    epsName: DataTypes.STRING,
-    NIT:DataTypes.STRING,
-    codigo: DataTypes.STRING,
-    Administradora: DataTypes.STRING
+  IdType.init({
+    idType: DataTypes.STRING,
+    description: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'EPS',
+    modelName: 'IdType',
   });
-  return EPS;
+  return IdType;
 };
