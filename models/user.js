@@ -20,8 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER(15),
       primaryKey: true,
-      null: false
+      null: false,
+      autoIncrement: true
     },
+    idNumber: DataTypes.STRING,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     phone: DataTypes.INTEGER,
