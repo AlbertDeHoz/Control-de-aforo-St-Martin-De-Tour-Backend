@@ -7,7 +7,7 @@ const checkware = [
     check('EpsName', 'Eps information is required').not().isEmpty(),
     check('lastName', 'The lastname is obligatory').not().isEmpty(),
     check('phone', 'the cellphone number is obligatory').not().isEmpty(),
-    check('age', 'Age shell is obligatory').not().isEmpty(),
+    check('birth', 'birth shell is obligatory').not().isEmpty(),
     check('address', 'the adress is obligatory').not().isEmpty()
 ];
 
@@ -16,8 +16,10 @@ router.post('/register',checkware,userController.register);
 router.post('/signin', userController.signin);
 router.put('/enable', userController.enable);
 router.put('/disable', userController.disable);
-router.put('/setAllUserNull',userController.setAllUserNull)
-
-//router.get('/:id',userController.justOne);
+router.put('/null',userController.null);
+router.put('/setAllUserNull',userController.setAllUserNull);
+router.put('/birth', userController.setUserBirth)
+router.get('/countuser',userController.countUsers)
+router.put('/update/:id',userController.setUser)
 
 module.exports = router;
