@@ -9,7 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       question: {
+        allowNull: false,
         type: Sequelize.STRING
+      },
+      value: {
+        allowNull: false,
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

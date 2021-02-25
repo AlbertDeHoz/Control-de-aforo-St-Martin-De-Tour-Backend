@@ -14,15 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   EPS.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement:true,
-    },
-    epsName: DataTypes.STRING,
-    NIT:DataTypes.STRING,
-    codigo: DataTypes.STRING,
-    Administradora: DataTypes.STRING
+    code: DataTypes.STRING,
+    NIT: DataTypes.STRING,
+    administradora: DataTypes.STRING,
+    EpsName: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'EPS',

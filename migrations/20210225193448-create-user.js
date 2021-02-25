@@ -8,20 +8,40 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      idNumber: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      idType: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       firstName: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       lastName: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       phone: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       age: {
         type: Sequelize.INTEGER
       },
+      birth: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
       address: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      EpsName: {
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       schedule: {
         type: Sequelize.STRING
