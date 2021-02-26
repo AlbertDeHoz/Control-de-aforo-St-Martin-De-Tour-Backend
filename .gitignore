@@ -142,5 +142,6 @@ dist
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,linux
 config
+services/token.js
+# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,linux

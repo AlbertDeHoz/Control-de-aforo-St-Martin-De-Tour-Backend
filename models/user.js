@@ -11,15 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.EPS, {foreignKey: 'EpsName', as: 'epsName', targetKey: 'EpsName'});
+      this.belongsTo(models.IdType, {foreignKey: 'idType', targetKey: 'idType'});
     }
   };
   User.init({
-    id: DataTypes.INTEGER,
+    idNumber: DataTypes.STRING,
+    //idType: DataTypes.STRING,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    phone: DataTypes.INTEGER,
+    phone: DataTypes.STRING,
     age: DataTypes.INTEGER,
+    birth: DataTypes.DATE,
     address: DataTypes.STRING,
+    //EpsName: DataTypes.STRING,
     schedule: DataTypes.STRING,
     enable: DataTypes.BOOLEAN
   }, {
