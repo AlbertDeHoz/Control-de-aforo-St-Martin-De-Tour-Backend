@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      attendace: {
+      attendance: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

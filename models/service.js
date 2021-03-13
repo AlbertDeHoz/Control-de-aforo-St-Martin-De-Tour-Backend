@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Service.init({
     name: DataTypes.STRING,
     schedule: DataTypes.STRING,
-    attendace: DataTypes.INTEGER,
+    attendance: DataTypes.INTEGER,
     enable: DataTypes.BOOLEAN
   }, {
     sequelize,
