@@ -1,8 +1,9 @@
 const router = require('express').Router()
-const servicecontroller = require('../controllers/serviceController');
+const serviceController = require('../controllers/serviceController');
 const middleware = require('../middleware/auth.js')
 
-router.get('/',servicecontroller.getServices);
-router.put('/update',middleware.verify,servicecontroller.setServices);
+router.get('/',serviceController.getService);
+router.get('/list',serviceController.getServices)
+router.put('/update',middleware.verify,serviceController.setServices);
 
 module.exports = router
